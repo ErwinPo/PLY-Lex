@@ -5,7 +5,7 @@ tokens = ['INT']
 t_ignore = ' \t'
 
 def t_INT(t):
-    r'[0-9]+'
+    r'\d+(_\d)*'
     t.value = int(t.value)
     return t
 
