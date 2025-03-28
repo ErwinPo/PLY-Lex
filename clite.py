@@ -5,8 +5,8 @@ tokens = ['FLOAT', 'INT']
 t_ignore = ' \t'
 
 def t_FLOAT(t):
-    r'(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?'
-    t.value = float(t.value)
+    r'(\d+(_\d+)*(\.\d*(_\d+)*)?|\.\d+(_\d+)*)([eE][+-]?\d+(_\d+)*)?'
+    t.value = float(t.value.replace('_', ''))
     return t
 
 
