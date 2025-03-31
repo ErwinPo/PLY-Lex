@@ -73,16 +73,16 @@ class TestFloats(unittest.TestCase):
 class TestStrings(unittest.TestCase):
     def setUp(self):
         self.lexer = clite.getLexer()
-    def test_basic_strings(self):
-        self.lexer.input('"Le petit prince"')
-        token = self.lexer.token()
-        self.assertEqual(token.type, 'STR')
-        self.assertEqual(token.value, 'Le petit prince')
-    # def test_basic_strings2(self):
-    #    self.lexer.input('"Hola \\"%s\\""')
-    #    token = self.lexer.token()
-    #    self.assertEqual(token.type, 'STR')
-    #    self.assertEqual(token.value, '"Hola \\"%s\\""')
+    # def test_basic_strings(self):
+    #     self.lexer.input('"Le petit prince"')
+    #     token = self.lexer.token()
+    #     self.assertEqual(token.type, 'STR')
+    #     self.assertEqual(token.value, 'Le petit prince')
+    def test_basic_strings2(self):
+       self.lexer.input('"Hola \\"%s\\""')
+       token = self.lexer.token()
+       self.assertEqual(token.type, 'STR')
+       self.assertEqual(token.value, '"Hola \\"%s\\""')
 
 if __name__ == '__main__':
     unittest.main(TestStrings())

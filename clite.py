@@ -15,8 +15,8 @@ def t_FLOAT(t):
     return t
 
 def t_STR(t):
-    r'"(?:\\.|[^"\\])*"'
-    t.value = t.value[1:-1]  
+    r'"(?:\\.|[^"\\])*"' 
+    t.value = t.value 
     return t
 
 def getLexer():
